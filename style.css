@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 400px;
+    border: 4px solid rgb(232, 72, 99);
+    margin: 5px;
+}
+
+.page1, .page2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.page2 {
+    opacity: 0;
+    z-index: -1; /* Ensure Page 2 is behind Page 1 initially */
+    transition: opacity 1s ease;
+    background-image: url(lovebg.jpg);
+}
+
+.content2{
+    background-color: rgba(255, 255, 255, 0.726);
+    width:300px;
+}
+
+.page2 img{
+    width:250px;
+    margin:10px;
+}
+
+.page1.transparent + .page2 {
+    opacity: 1;
+    z-index: 1; /* Bring Page 2 to the front when Page 1 is transparent */
+}
+
+.content1, .content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page1 img {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 7px 7px 7px gray;
+    margin: 10px;
+}
+
+.heading {
+    padding-top: 10px;
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+    text-shadow: 3px 3px 0.2px rgb(244, 244, 9);
+}
+
+.sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sub button {
+    padding: 10px;
+    border-radius: 17px;
+    background-color: rgb(245, 86, 112);
+    color: white;
+    border: 2px solid pink;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+}
+
+.sub button:active {
+    background-color: white;
+    color: rgb(254, 51, 85);
+}
+
+.transparent {
+    opacity: 0;
+    z-index: -1; /* Send Page 1 behind Page 2 when it's transparent */
+}
